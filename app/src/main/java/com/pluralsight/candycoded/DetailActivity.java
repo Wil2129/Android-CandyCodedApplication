@@ -4,16 +4,17 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
 import com.pluralsight.candycoded.DB.CandyContract;
 import com.pluralsight.candycoded.DB.CandyContract.CandyEntry;
 import com.pluralsight.candycoded.DB.CandyDbHelper;
-import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -46,18 +47,18 @@ public class DetailActivity extends AppCompatActivity {
                     CandyEntry.COLUMN_NAME_DESC));
 
 
-            TextView textView = (TextView) this.findViewById(R.id.text_view_name);
+            TextView textView = this.findViewById(R.id.text_view_name);
             textView.setText(candyName);
 
-            TextView textViewPrice = (TextView) this.findViewById(R.id.text_view_price);
+            TextView textViewPrice = this.findViewById(R.id.text_view_price);
             textViewPrice.setText(candyPrice);
 
-            TextView textViewDesc = (TextView) this.findViewById(R.id.text_view_desc);
+            TextView textViewDesc = this.findViewById(R.id.text_view_desc);
             textViewDesc.setText(candyDesc);
 
-            ImageView imageView = (ImageView) this.findViewById(
+            ImageView imageView = this.findViewById(
                     R.id.image_view_candy);
-            Picasso.with(this).load(mCandyImageUrl).into(imageView);
+            Glide.with(this).load(mCandyImageUrl).into(imageView);
         }
     }
 

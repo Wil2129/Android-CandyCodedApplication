@@ -24,7 +24,7 @@ public class CandyCursorAdapter extends CursorAdapter {
 
     @Override public void bindView(View view, Context context,
                                    Cursor cursor) {
-        TextView textView = (TextView) view.findViewById(
+        TextView textView = view.findViewById(
                 R.id.text_view_candy);
         String candyName = cursor.getString(
                 cursor.getColumnIndexOrThrow("name"));
