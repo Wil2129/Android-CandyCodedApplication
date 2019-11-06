@@ -2,11 +2,10 @@ package com.pluralsight.candycoded;
 
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
-
+import com.squareup.picasso.Picasso;
 
 public class InfoActivity extends AppCompatActivity {
 
@@ -16,8 +15,8 @@ public class InfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         Uri uri = Uri.parse("android.resource://com.codeschool.candycoded/" + R.drawable.store_front);
-        ImageView candyStoreImageView = findViewById(R.id.image_view_candy_store);
-        Glide.with(this).
+        ImageView candyStoreImageView = (ImageView)findViewById(R.id.image_view_candy_store);
+        Picasso.with(this).
                 load(uri).
                 into(candyStoreImageView);
 
